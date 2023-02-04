@@ -1,0 +1,10 @@
+{
+    "notebook.editorOptionsCustomizations": {
+    }
+}
+
+{
+    "emmet.includeLanguages": {
+       "javascript": "javascriptreact"
+    }
+ }
