@@ -1,5 +1,6 @@
 import { LoginAPI } from "../Utils/fetch";
 import { Link } from "react-router-dom";
+import "./login.css";
 
 function Login() {
   let isUserLoggedIn = false;
@@ -37,9 +38,8 @@ function Login() {
 
   return !isUserLoggedIn ? (
     <>
-      <div className="row row-cols-2">
-        <div className="container col vh-100"></div>
-        <div className="container col vh-100 justify-content-center align-items-center">
+      <div className="login-image">
+        <div className="container  vh-100 d-flex justify-content-center align-items-center">
           <form>
             <div className="mb-3">
               <input
@@ -57,13 +57,13 @@ function Login() {
                 placeholder="Password"
               />
             </div>
-            <div className="mb-3 form-check">
+            <div className="form-check mb-3">
               <input
                 type="checkbox"
                 className="form-check-input"
                 id="exampleCheck1"
               />
-              <label className="form-check-label" for="exampleCheck1">
+              <label className="form-check-label" htmlFor="exampleCheck1">
                 Remember me
               </label>
             </div>
