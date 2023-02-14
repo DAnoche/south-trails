@@ -38,9 +38,15 @@ function Login() {
 
   return !isUserLoggedIn ? (
     <>
-      <div className="login-image">
-        <div className="container  vh-100 d-flex justify-content-center align-items-center">
+      <div className="login-image vh-100">
+        <div className="container me-0 w-25 h-100 opacity-75 d-flex justify-content-center align-items-center bg-light">
           <form>
+            <img
+              className="login-logo"
+              src={"/images/South-Trails-logo.svg"}
+              alt="South Trails Logo"
+            />
+            <h1 className="mb-3 text-center">LOGIN</h1>
             <div className="mb-3">
               <input
                 id="username"
@@ -67,7 +73,7 @@ function Login() {
                 Remember me
               </label>
             </div>
-            <button className="btn btn-lg w-75 btn-primary" onClick={login}>
+            <button className="btn btn-lg w-100 btn-primary" onClick={login}>
               Login
             </button>
 

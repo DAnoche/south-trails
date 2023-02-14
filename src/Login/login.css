@@ -4,7 +4,16 @@
 }
 
 .login-image {
-  background-image: url("/images/mountain-login-bg.jpg");
+  background-image: linear-gradient(
+      to bottom,
+      rgba(245, 245, 250, 0.75),
+      rgba(17, 109, 66, 0.5)
+    ),
+    url("/public/images/mountain-login-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.login-logo {
+  margin-bottom: 5em;
 }
