@@ -37,61 +37,48 @@ function Login() {
 
   return !isUserLoggedIn ? (
     <>
-      <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">
-            Email address
-          </label>
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-          <div id="emailHelp" class="form-text">
-            We'll never share your email with anyone else.
-          </div>
+      <div className="row row-cols-2">
+        <div className="container col vh-100"></div>
+        <div className="container col vh-100 justify-content-center align-items-center">
+          <form>
+            <div className="mb-3">
+              <input
+                id="username"
+                className="form-control"
+                type="text"
+                placeholder="Username"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                id="password"
+                className="form-control"
+                type="password"
+                placeholder="Password"
+              />
+            </div>
+            <div className="mb-3 form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="exampleCheck1"
+              />
+              <label className="form-check-label" for="exampleCheck1">
+                Remember me
+              </label>
+            </div>
+            <button className="btn btn-lg w-75 btn-primary" onClick={login}>
+              Login
+            </button>
+
+            <div className="mt-2">
+              Dont have an account yet ? &nbsp;
+              <Link to="/Register" className="login100-form-btn">
+                Register here
+              </Link>
+            </div>
+          </form>
         </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-          />
-        </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1">
-            Check me out
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary">
-          Submit
-        </button>
-      </form>
-
-      <input id="username" className="" type="text" placeholder="Username" />
-
-      <input
-        id="password"
-        className=""
-        type="password"
-        placeholder="Password"
-      />
-
-      <div className="">
-        <button className="login100-form-btn" onClick={login}>
-          Login
-        </button>
-      </div>
-
-      <div className="m">
-        <Link to="/Register" className="login100-form-btn">
-          Sign-up
-        </Link>
       </div>
     </>
   ) : (
