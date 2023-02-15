@@ -37,6 +37,11 @@
   color: #eee;
 }
 
+.btn-color:hover {
+  background-color: #2e3047;
+  color: #eee;
+}
+
 .login-divider:after,
 .login-divider:before {
   content: "";
