@@ -38,18 +38,18 @@ function Login() {
 
   return !isUserLoggedIn ? (
     <>
-      <div className="login-image vh-100 d-flex">
-        <div className="login-quote position-absolute bottom-0 start-0 ms-5">
+      <div className="login-image row g-0 align-items-center vh-100 d-flex">
+        <div className="login-quote col-lg-7 d-none d-lg-block position-absolute bottom-0 start-0 ms-5">
           <h1 className="text-light display-2 ">Discover something new.</h1>
           <p className="text-light lead">
             The journey of a thousand miles begins with a single step.
           </p>
         </div>
 
-        <div className="container login-form me-0 h-100 d-flex justify-content-center align-items-center text-light">
-          <form>
+        <div className="container login-form col-lg-5 me-0 h-100 d-flex justify-content-center align-items-center text-light">
+          <form className="container-fluid text-center p-md-5 p-lg-2">
             <img
-              className="login-logo"
+              className="login-logo img-fluid d-inline-block"
               src={"/images/South-Trails-logo.svg"}
               alt="South Trails Logo"
             />
@@ -59,28 +59,18 @@ function Login() {
             <div className="mb-3">
               <input
                 id="username"
-                className="form-control"
+                className="form-control form-control-lg"
                 type="text"
                 placeholder="Username"
               />
             </div>
-            <div className="mb-3">
+            <div className="mb-5">
               <input
                 id="password"
-                className="form-control"
+                className="form-control form-control-lg"
                 type="password"
                 placeholder="Password"
               />
-            </div>
-            <div className="form-check mb-3">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="exampleCheck1"
-              />
-              <label className="form-check-label" htmlFor="exampleCheck1">
-                Remember me
-              </label>
             </div>
             <button className="btn btn-lg w-100 btn-color" onClick={login}>
               Login
