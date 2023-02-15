@@ -37,7 +37,7 @@ function Register() {
   return !isUserLoggedIn ? (
     <>
       <div className="register-image row g-0 align-items-center vh-100 d-flex">
-        <div className="register-quote col-lg-7 d-none d-lg-block position-absolute bottom-0 start-0 ms-5">
+        <div className="register-quote col-lg-7 d-none d-lg-block text-end position-absolute bottom-0 end-0 me-5 order-lg-1">
           <h1 className="text-light display-2 ">
             Not all who wander are lost.
           </h1>
@@ -46,143 +46,61 @@ function Register() {
           </p>
         </div>
 
-        <div className="container register-form col-lg-5 me-0 h-100 d-flex justify-content-center align-items-center text-light">
-          <form className="container-fluid text-center p-md-5 p-lg-2">
-            <img
-              className="register-logo img-fluid d-inline-block"
-              src={"/images/South-Trails-logo.svg"}
-              alt="South Trails Logo"
-            />
-            <h2 className="text-center display-6 mb-5">Create Account</h2>
-            <div className="mb-3">
-              <input
-                id="username"
-                className="form-control form-control-lg"
-                type="text"
-                placeholder="Username"
+        <div className="register-form col-lg-5 order-lg-2 me-0 h-100 d-flex align-items-center">
+          <div className="container d-flex col justify-content-center text-light">
+            <form className="text-center p-md-5 p-lg-2">
+              <img
+                className="register-logo img-fluid d-inline-block"
+                src={"/images/South-Trails-logo.svg"}
+                alt="South Trails Logo"
               />
-            </div>
-            <div className="mb-3">
-              <input
-                id="password"
-                className="form-control form-control-lg"
-                type="password"
-                placeholder="Password"
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                id="fullName"
-                className="form-control form-control-lg"
-                type="text"
-                placeholder="Full Name"
-              />
-            </div>
-            <div className="mb-5">
-              <input
-                id="email"
-                className="form-control form-control-lg"
-                type="Email"
-                placeholder="Email"
-              />
-            </div>
-            <button className="btn btn-lg w-100 btn-color" onClick={register}>
-              Register now
-            </button>
-
-            <div className="register-divider d-flex align-items-center my-4"></div>
-
-            <div className="text-center">
-              Already have an account ?&nbsp;
-              <Link to="/Login" className="register-link">
-                Login
-              </Link>
-              &nbsp;here instead.
-            </div>
-          </form>
-        </div>
-      </div>
-
-      {/* End of line */}
-      <div className="limiter">
-        <div className="container-login100">
-          <div className="wrap-login100">
-            <form className="login100-form validate-form">
-              <span className="login100-form-title pb-5">Sign-up</span>
-
-              <div className="wrap-input100">
+              <h2 className="text-center display-6 mb-5">Create Account</h2>
+              <div className="mb-3">
                 <input
                   id="username"
-                  className="input100"
+                  className="form-control form-control-lg"
                   type="text"
                   placeholder="Username"
                 />
               </div>
-
-              <div
-                className="wrap-input100 validate-input"
-                data-validate="Password is required"
-              >
+              <div className="mb-3">
                 <input
                   id="password"
-                  className="input100"
+                  className="form-control form-control-lg"
                   type="password"
                   placeholder="Password"
                 />
               </div>
-
-              <div className="wrap-input100">
+              <div className="mb-3">
                 <input
                   id="fullName"
-                  className="input100"
+                  className="form-control form-control-lg"
                   type="text"
                   placeholder="Full Name"
                 />
               </div>
-
-              <div className="wrap-input100">
+              <div className="mb-5">
                 <input
                   id="email"
-                  className="input100"
+                  className="form-control form-control-lg"
                   type="Email"
                   placeholder="Email"
                 />
               </div>
+              <button className="btn btn-lg w-100 btn-color" onClick={register}>
+                Register now
+              </button>
 
-              <div className="container-login100-form-btn">
-                <button className="login100-form-btn" onClick={register}>
-                  Register now
-                </button>
-              </div>
+              <div className="register-divider d-flex align-items-center my-4"></div>
 
-              <div className="text-center p-t-46 p-b-20">
-                <span className="txt2">or sign in using</span>
-              </div>
-
-              <div className="login100-form-social flex-c-m">
-                <a
-                  href="#"
-                  className="login100-form-social-item flex-c-m bg1 m-r-5"
-                >
-                  <i className="fa fa-facebook-f" aria-hidden="true"></i>
-                </a>
-
-                <a
-                  href="#"
-                  className="login100-form-social-item flex-c-m bg2 m-r-5"
-                >
-                  <i className="fa fa-twitter" aria-hidden="true"></i>
-                </a>
+              <div className="text-center">
+                Already have an account ?&nbsp;
+                <Link to="/Login" className="register-link">
+                  Login
+                </Link>
+                &nbsp;here instead.
               </div>
             </form>
-
-            <div
-              className="login100-more"
-              style={{
-                backgroundImage: `url(images/loginbg.jpg)`,
-                backgroundRepeat: "no-repeat",
-              }}
-            ></div>
           </div>
         </div>
       </div>

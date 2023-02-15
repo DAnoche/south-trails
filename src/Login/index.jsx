@@ -47,7 +47,7 @@ function Login() {
         </div>
 
         <div className="container login-form col-lg-5 me-0 h-100 d-flex justify-content-center align-items-center text-light">
-          <form className="container-fluid text-center p-md-5 p-lg-2">
+          <form className="text-center p-md-5 p-lg-2">
             <img
               className="login-logo img-fluid d-inline-block"
               src={"/images/South-Trails-logo.svg"}
