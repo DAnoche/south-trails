@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.register-form {
+  background-color: rgba(113, 120, 148, 0.8);
+}
+
+.register-quote {
+  margin-bottom: 5em;
+}
+
+.register-image {
+  background: linear-gradient(to bottom, #3bba9c8a, #7077935e),
+    url("/public/images/mountain-login-bg.jpg") no-repeat center center/cover;
+}
+
+.register-logo {
+  margin-bottom: 5em;
+  height: 10em;
+}
+
+.register-icon {
+  margin-bottom: 1em;
+  font-size: 2em;
+}
+.register-link {
+  color: #3bba9c;
+}
+
+.btn-color {
+  background-color: #3bba9c;
+  color: #eee;
+}
+
+.btn-color:hover {
+  background-color: #2e3047;
+  color: #eee;
+}
+
+.register-divider:after,
+.register-divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}

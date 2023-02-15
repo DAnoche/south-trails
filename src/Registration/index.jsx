@@ -1,4 +1,6 @@
 import { RegisterAPI } from "../Utils/fetch";
+import { Link } from "react-router-dom";
+import "./register.css";
 function Register() {
   let isUserLoggedIn = false;
   try {
@@ -34,6 +36,74 @@ function Register() {
   };
   return !isUserLoggedIn ? (
     <>
+      <div className="register-image row g-0 align-items-center vh-100 d-flex">
+        <div className="register-quote col-lg-7 d-none d-lg-block position-absolute bottom-0 start-0 ms-5">
+          <h1 className="text-light display-2 ">
+            Not all who wander are lost.
+          </h1>
+          <p className="text-light lead">
+            The sun shines brightest from the peaks of mountains.
+          </p>
+        </div>
+
+        <div className="container register-form col-lg-5 me-0 h-100 d-flex justify-content-center align-items-center text-light">
+          <form className="container-fluid text-center p-md-5 p-lg-2">
+            <img
+              className="register-logo img-fluid d-inline-block"
+              src={"/images/South-Trails-logo.svg"}
+              alt="South Trails Logo"
+            />
+            <h2 className="text-center display-6 mb-5">Create Account</h2>
+            <div className="mb-3">
+              <input
+                id="username"
+                className="form-control form-control-lg"
+                type="text"
+                placeholder="Username"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                id="password"
+                className="form-control form-control-lg"
+                type="password"
+                placeholder="Password"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                id="fullName"
+                className="form-control form-control-lg"
+                type="text"
+                placeholder="Full Name"
+              />
+            </div>
+            <div className="mb-5">
+              <input
+                id="email"
+                className="form-control form-control-lg"
+                type="Email"
+                placeholder="Email"
+              />
+            </div>
+            <button className="btn btn-lg w-100 btn-color" onClick={register}>
+              Register now
+            </button>
+
+            <div className="register-divider d-flex align-items-center my-4"></div>
+
+            <div className="text-center">
+              Already have an account ?&nbsp;
+              <Link to="/Login" className="register-link">
+                Login
+              </Link>
+              &nbsp;here instead.
+            </div>
+          </form>
+        </div>
+      </div>
+
+      {/* End of line */}
       <div className="limiter">
         <div className="container-login100">
           <div className="wrap-login100">

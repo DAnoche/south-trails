@@ -88,7 +88,7 @@ function Login() {
             </div>
 
             <div className="text-center">
-              Dont have an account yet ? &nbsp;
+              Dont have an account yet?&nbsp;
               <Link to="/Register" className="login-link">
                 Register here
               </Link>
