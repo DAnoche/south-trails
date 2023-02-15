@@ -38,15 +38,24 @@ function Login() {
 
   return !isUserLoggedIn ? (
     <>
-      <div className="login-image vh-100">
-        <div className="container me-0 w-25 h-100 opacity-75 d-flex justify-content-center align-items-center bg-light">
+      <div className="login-image vh-100 d-flex">
+        <div className="login-quote position-absolute bottom-0 start-0 ms-5">
+          <h1 className="text-light display-2 ">Discover something new.</h1>
+          <p className="text-light lead">
+            The journey of a thousand miles begins with a single step.
+          </p>
+        </div>
+
+        <div className="container login-form me-0 h-100 d-flex justify-content-center align-items-center text-light">
           <form>
             <img
               className="login-logo"
               src={"/images/South-Trails-logo.svg"}
               alt="South Trails Logo"
             />
-
+            <h2 className="text-center display-6 mb-5">
+              Login To Your Account
+            </h2>
             <div className="mb-3">
               <input
                 id="username"
@@ -73,24 +82,24 @@ function Login() {
                 Remember me
               </label>
             </div>
-            <button className="btn btn-lg w-100 btn-primary" onClick={login}>
+            <button className="btn btn-lg w-100 btn-color" onClick={login}>
               Login
             </button>
 
-            <div className="divider d-flex align-items-center my-4">
-              <p className="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+            <div className="login-divider d-flex align-items-center my-4">
+              <p className="text-center fw-bold mx-3 mb-0">OR</p>
             </div>
 
             <div className="login-icon text-center">
-              <button className="btn btn-lg w-100 btn-primary">
+              <button className="btn btn-lg w-100 btn-color">
                 <i className="fab fa-facebook-f me-2" />
                 Continue with Facebook
               </button>
             </div>
 
-            <div>
+            <div className="text-center">
               Dont have an account yet ? &nbsp;
-              <Link to="/Register" className="login100-form-btn">
+              <Link to="/Register" className="login-link">
                 Register here
               </Link>
             </div>

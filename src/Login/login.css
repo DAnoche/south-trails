@@ -3,28 +3,42 @@
   padding: 0;
 }
 
+.login-form {
+  background-color: rgba(113, 120, 148, 0.8);
+  width: 40%;
+}
+
+.login-quote {
+  margin-bottom: 5em;
+  -webkit-mask-image: linear-gradient(#000, rgba(0, 0, 0, 0.3));
+  mask-image: linear-gradient(#000, rgba(0, 0, 0, 0.3));
+}
+
 .login-image {
-  background-image: linear-gradient(
-      to bottom,
-      rgba(245, 245, 250, 0.75),
-      rgba(17, 109, 66, 0.5)
-    ),
-    url("/public/images/mountain-login-bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: linear-gradient(to bottom, #3bba9c8a, #7077935e),
+    url("/public/images/mountain-login-bg.jpg") no-repeat center center/cover;
 }
 
 .login-logo {
   margin-bottom: 5em;
+  height: 10em;
 }
 
 .login-icon {
   margin-bottom: 1em;
   font-size: 2em;
 }
+.login-link {
+  color: #3bba9c;
+}
 
-.divider:after,
-.divider:before {
+.btn-color {
+  background-color: #3bba9c;
+  color: #eee;
+}
+
+.login-divider:after,
+.login-divider:before {
   content: "";
   flex: 1;
   height: 1px;
