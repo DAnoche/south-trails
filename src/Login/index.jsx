@@ -46,7 +46,7 @@ function Login() {
               src={"/images/South-Trails-logo.svg"}
               alt="South Trails Logo"
             />
-            <h1 className="mb-3 text-center">LOGIN</h1>
+
             <div className="mb-3">
               <input
                 id="username"
@@ -77,7 +77,18 @@ function Login() {
               Login
             </button>
 
-            <div className="mt-2">
+            <div className="divider d-flex align-items-center my-4">
+              <p className="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+            </div>
+
+            <div className="login-icon text-center">
+              <button className="btn btn-lg w-100 btn-primary">
+                <i className="fab fa-facebook-f me-2" />
+                Continue with Facebook
+              </button>
+            </div>
+
+            <div>
               Dont have an account yet ? &nbsp;
               <Link to="/Register" className="login100-form-btn">
                 Register here
