@@ -37,7 +37,7 @@ function Register() {
   return !isUserLoggedIn ? (
     <>
       <div className="register-image row g-0 align-items-center vh-100 d-flex">
-        <div className="register-quote col-lg-7 d-none d-lg-block text-end position-absolute bottom-0 end-0 me-5 order-lg-1">
+        <div className="register-quote col-lg-6 d-none d-lg-block text-end position-absolute bottom-0 end-0 me-5 order-lg-1">
           <h1 className="text-light display-2 ">
             Not all who wander are lost.
           </h1>
@@ -46,7 +46,7 @@ function Register() {
           </p>
         </div>
 
-        <div className="register-form col-lg-5 order-lg-2 me-0 h-100 d-flex align-items-center">
+        <div className="register-form col-lg-5 order-lg-2 me-0 d-flex align-items-center">
           <div className="container d-flex col justify-content-center text-light">
             <form className="text-center p-md-5 p-lg-2">
               <img
