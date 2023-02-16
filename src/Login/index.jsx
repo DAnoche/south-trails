@@ -39,15 +39,8 @@ function Login() {
   return !isUserLoggedIn ? (
     <>
       <div className="login-image row g-0 align-items-center vh-100 d-flex">
-        <div className="login-quote col-lg-7 d-none d-lg-block position-absolute bottom-0 start-0 ms-5">
-          <h1 className="text-light display-2 ">Discover something new.</h1>
-          <p className="text-light lead">
-            The journey of a thousand miles begins with a single step.
-          </p>
-        </div>
-
-        <div className="container login-form col-lg-5 me-0 h-100 d-flex justify-content-center align-items-center text-light">
-          <form className="text-center p-md-5 p-lg-2">
+        <div className="container login-form col-md-10 col-lg-7 col-xl-5 d-flex justify-content-center align-items-center text-light">
+          <form className="text-center">
             <img
               className="login-logo img-fluid d-inline-block"
               src={"/images/South-Trails-logo.svg"}
@@ -64,7 +57,7 @@ function Login() {
                 placeholder="Username"
               />
             </div>
-            <div className="mb-5">
+            <div className="mb-4">
               <input
                 id="password"
                 className="form-control form-control-lg"
@@ -80,10 +73,16 @@ function Login() {
               <p className="text-center fw-bold mx-3 mb-0">OR</p>
             </div>
 
-            <div className="login-icon text-center">
+            <div className="login-icon text-center d-none d-md-block">
               <button className="btn btn-lg w-100 btn-color">
                 <i className="fab fa-facebook-f me-2" />
                 Continue with Facebook
+              </button>
+            </div>
+
+            <div className="login-icon text-center d-block d-md-none">
+              <button className="btn btn-lg w-100 btn-color">
+                <i className="fab fa-facebook-f me-2" />
               </button>
             </div>
 

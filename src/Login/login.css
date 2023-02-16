@@ -4,11 +4,16 @@
 }
 
 .login-form {
-  background-color: rgba(113, 120, 148, 0.8);
+  background-color: #2e304793;
+  height: 80%;
+  border-radius: 2%;
 }
 
-.login-quote {
-  margin-bottom: 5em;
+@media only screen and (max-width: 425px) {
+  .login-form {
+    height: 100%;
+    border-radius: 0;
+  }
 }
 
 .login-image {
@@ -17,8 +22,8 @@
 }
 
 .login-logo {
-  margin-bottom: 5em;
-  height: 10em;
+  margin-bottom: 2em;
+  height: 8em;
 }
 
 .login-icon {
