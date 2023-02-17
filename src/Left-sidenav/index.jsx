@@ -12,14 +12,14 @@ function LeftNavBar(props) {
 
   return (
     <>
-      <nav className="sidenav col-2 sticky-top vh-100">
+      <nav className="sidenav col-2 col-lg-3 sticky-top vh-100">
         {/* Logo */}
         <Link
           onClick={() => {
             props.setCurrentLink("/");
           }}
           to="/"
-          className="text-decoration-none text-light w-100"
+          className="text-decoration-none text-light w-100 d-none d-lg-block"
         >
           <img
             className="sidenav-logo img-fluid"
@@ -31,7 +31,7 @@ function LeftNavBar(props) {
         {/* Menu */}
         <div className="container">
           <ul className="navbar-nav decoration-none">
-            <li className="nav-item mb-3 pb-3 border-bottom border-light">
+            <li className="nav-item mb-3 pb-3 mt-5 mt-lg-0 border-bottom border-light text-center text-lg-start ">
               <Link
                 onClick={() => {
                   props.setCurrentLink("/");
@@ -39,11 +39,11 @@ function LeftNavBar(props) {
                 to="/"
                 className="text-decoration-none text-light w-100"
               >
-                <span className="fa fa-home mx-3" />
-                Home
+                <span className="fa fa-home mx-3 sidenav-icon" />
+                <span className="d-none d-lg-inline">Home</span>
               </Link>
             </li>
-            <li className="nav-item mb-3 pb-3 border-bottom border-light">
+            <li className="nav-item mb-3 pb-3 border-bottom border-light text-center text-lg-start">
               <Link
                 onClick={() => {
                   props.setCurrentLink("/Gallert");
@@ -51,11 +51,11 @@ function LeftNavBar(props) {
                 to="/Gallery"
                 className="text-decoration-none text-light w-100"
               >
-                <span className="fa fa-photo mx-3" />
-                Gallery
+                <span className="fa fa-photo mx-3 sidenav-icon" />
+                <span className="d-none d-lg-inline">Gallery</span>
               </Link>
             </li>
-            <li className="nav-item mb-3 pb-3 border-bottom border-light">
+            <li className="nav-item mb-3 pb-3 border-bottom border-light text-center text-lg-start">
               <Link
                 onClick={() => {
                   props.setCurrentLink("/Trails");
@@ -63,11 +63,11 @@ function LeftNavBar(props) {
                 to="/Trails"
                 className="text-decoration-none text-light w-100"
               >
-                <span className="fa fa-bolt  mx-3" />
-                Trails
+                <span className="fa fa-bolt mx-3 sidenav-icon" />
+                <span className="d-none d-lg-inline">Trails</span>
               </Link>
             </li>
-            <li className="nav-item mb-3 pb-3 border-bottom border-light">
+            <li className="nav-item mb-3 pb-3 border-bottom border-light text-center text-lg-start">
               <Link
                 onClick={() => {
                   props.setCurrentLink("/Maps");
@@ -75,8 +75,8 @@ function LeftNavBar(props) {
                 to="/Maps"
                 className="text-decoration-none text-light w-100"
               >
-                <span className="fa fa-map mx-3" />
-                Maps
+                <span className="fa fa-map mx-3 sidenav-icon" />
+                <span className="d-none d-lg-inline">Maps</span>
               </Link>
             </li>
 
