@@ -12,7 +12,7 @@ function LeftNavBar(props) {
 
   return (
     <>
-      <nav className="sidenav col-2 col-lg-3 sticky-top vh-100">
+      <nav className="sidenav col-12 col-md-2 col-lg-3 col-xl-2 sticky-top vh-100">
         {/* Logo */}
         <Link
           onClick={() => {
@@ -31,7 +31,7 @@ function LeftNavBar(props) {
         {/* Menu */}
         <div className="container">
           <ul className="navbar-nav decoration-none">
-            <li className="nav-item mb-3 pb-3 mt-5 mt-lg-0 border-bottom border-light text-center text-lg-start ">
+            <li className="sidenav-li nav-item mb-3 pb-3 mt-5 mt-lg-0 text-center text-lg-start ">
               <Link
                 onClick={() => {
                   props.setCurrentLink("/");
@@ -43,7 +43,7 @@ function LeftNavBar(props) {
                 <span className="d-none d-lg-inline">Home</span>
               </Link>
             </li>
-            <li className="nav-item mb-3 pb-3 border-bottom border-light text-center text-lg-start">
+            <li className="sidenav-li nav-item mb-3 pb-3 text-center text-lg-start">
               <Link
                 onClick={() => {
                   props.setCurrentLink("/Gallert");
@@ -55,7 +55,7 @@ function LeftNavBar(props) {
                 <span className="d-none d-lg-inline">Gallery</span>
               </Link>
             </li>
-            <li className="nav-item mb-3 pb-3 border-bottom border-light text-center text-lg-start">
+            <li className="sidenav-li nav-item mb-3 pb-3 text-center text-lg-start">
               <Link
                 onClick={() => {
                   props.setCurrentLink("/Trails");
@@ -67,7 +67,7 @@ function LeftNavBar(props) {
                 <span className="d-none d-lg-inline">Trails</span>
               </Link>
             </li>
-            <li className="nav-item mb-3 pb-3 border-bottom border-light text-center text-lg-start">
+            <li className="sidenav-li nav-item mb-3 pb-3 text-center text-lg-start">
               <Link
                 onClick={() => {
                   props.setCurrentLink("/Maps");
@@ -80,7 +80,7 @@ function LeftNavBar(props) {
               </Link>
             </li>
 
-            <li className="nav-item mb-5 pb-3 border-bottom border-light">
+            <li className="sidenav-li nav-item mb-5 pb-3 border-bottom border-light">
               <Link
                 to="/Login"
                 className="text-decoration-none text-light w-100"

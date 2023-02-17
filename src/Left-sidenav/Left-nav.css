@@ -21,6 +21,16 @@
   padding-bottom: 1em;
 }
 
+.sidenav-li {
+  border-bottom: 1px solid whitesmoke;
+}
+
+@media only screen and (max-width: 425px) {
+  .sidenav-li {
+    border-bottom: 0px solid;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .sidenav-icon {
     font-size: 2em;
