@@ -129,6 +129,12 @@ function LeftNavBar(props) {
             <script>document.write(new Date().getFullYear());</script> All
             rights reserved
           </p>
+          <Link
+            to="/Privacy-Policy"
+            className="text-decoration-underline text-light w-100"
+          >
+            Privacy Policy
+          </Link>
         </div>
       </nav>
     </>
