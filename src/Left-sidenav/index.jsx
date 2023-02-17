@@ -46,9 +46,9 @@ function LeftNavBar(props) {
             <li className="nav-item mb-3 pb-3 border-bottom border-light">
               <Link
                 onClick={() => {
-                  props.setCurrentLink("/Dashboard");
+                  props.setCurrentLink("/Gallert");
                 }}
-                to="/Dashboard"
+                to="/Gallery"
                 className="text-decoration-none text-light w-100"
               >
                 <span className="fa fa-photo mx-3" />
@@ -58,9 +58,9 @@ function LeftNavBar(props) {
             <li className="nav-item mb-3 pb-3 border-bottom border-light">
               <Link
                 onClick={() => {
-                  props.setCurrentLink("/Contact-us");
+                  props.setCurrentLink("/Trails");
                 }}
-                to="/Contact-us"
+                to="/Trails"
                 className="text-decoration-none text-light w-100"
               >
                 <span className="fa fa-bolt  mx-3" />
@@ -70,9 +70,9 @@ function LeftNavBar(props) {
             <li className="nav-item mb-3 pb-3 border-bottom border-light">
               <Link
                 onClick={() => {
-                  props.setCurrentLink("/Support");
+                  props.setCurrentLink("/Maps");
                 }}
-                to="/Support"
+                to="/Maps"
                 className="text-decoration-none text-light w-100"
               >
                 <span className="fa fa-map mx-3" />
@@ -93,7 +93,7 @@ function LeftNavBar(props) {
         </div>
 
         {/* News Letter */}
-        <div className="text-center text-light border-top px-1">
+        <div className="text-center text-light">
           <div className="mb-5 mt-2">
             <h3 className="h5 mb-3">Subscribe for newsletter</h3>
             <form>

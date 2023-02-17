@@ -2,8 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //Pages
 import NotFound from "./404";
 import Home from "./Home";
-import Dashboard from "./Dashboard";
-import ContactUs from "./Contact-us";
+import Gallery from "./Gallery";
+import Trails from "./Trails";
+import Maps from "./Maps";
 import Login from "./Login";
 import Register from "./Registration";
 
@@ -12,8 +13,9 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route path="/Dashboard" element={<Dashboard />} />
-          <Route path="/Contact-us" element={<ContactUs />} />
+          <Route path="/Gallery" element={<Gallery />} />
+          <Route path="/Trails" element={<Trails />} />
+          <Route path="/Maps" element={<Maps />} />
         </Route>
         <Route path="/Register" element={<Register />} />
         <Route path="/Login" element={<Login />} />
