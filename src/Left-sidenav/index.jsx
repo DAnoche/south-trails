@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import "./Left-nav.css";
 
 function LeftNavBar(props) {
   const SignOut = () => {
@@ -6,91 +8,82 @@ function LeftNavBar(props) {
     window.location.reload();
   };
 
+  const [email, setEmail] = useState("");
+
   return (
     <>
-      <nav
-        id="sidebarMenu"
-        className="col-md-1 col-lg-2 sticky-top bg-secondary vh-100"
-      >
-        <div className="text-center my-3">
+      <nav className="sidenav col-2 sticky-top vh-100">
+        {/* Logo */}
+        <Link
+          onClick={() => {
+            props.setCurrentLink("/");
+          }}
+          to="/"
+          className="text-decoration-none text-light w-100"
+        >
           <img
-            className="profile-image border border-3 border-light"
-            src="images/tomeee.jpg"
-            alt="Profile-Pic"
+            className="sidenav-logo img-fluid"
+            src={"/images/South-Trails-logo.svg"}
+            alt="South Trails Logo"
           />
-          <h2 className="text-light mt-2">Hi!, I'm Tomeee</h2>
-          <Link
-            onClick={() => {
-              props.setCurrentLink("/Someting");
-            }}
-            to="/Someting"
-            className="link-light"
-          >
-            View Profile
-          </Link>
-        </div>
+        </Link>
 
-        <div className=" container border-top border-bottom border-light pt-3">
-          <ul className="navbar-nav mb-5  text-light">
-            <li className="nav-item active mb-3">
+        {/* Menu */}
+        <div className="container">
+          <ul className="navbar-nav decoration-none">
+            <li className="nav-item mb-3 pb-3 border-bottom border-light">
               <Link
                 onClick={() => {
                   props.setCurrentLink("/");
                 }}
                 to="/"
-                className="btn btn-light w-100"
+                className="text-decoration-none text-light w-100"
               >
+                <span className="fa fa-home mx-3" />
                 Home
               </Link>
             </li>
-            <li className="nav-item mb-3">
+            <li className="nav-item mb-3 pb-3 border-bottom border-light">
               <Link
                 onClick={() => {
                   props.setCurrentLink("/Dashboard");
                 }}
                 to="/Dashboard"
-                className="btn text-light w-100"
+                className="text-decoration-none text-light w-100"
               >
-                Dashboard
+                <span className="fa fa-photo mx-3" />
+                Gallery
               </Link>
             </li>
-            <li className="nav-item mb-3">
+            <li className="nav-item mb-3 pb-3 border-bottom border-light">
               <Link
                 onClick={() => {
                   props.setCurrentLink("/Contact-us");
                 }}
                 to="/Contact-us"
-                className="btn text-light w-100"
+                className="text-decoration-none text-light w-100"
               >
-                Contact Us
+                <span className="fa fa-bolt  mx-3" />
+                Trails
               </Link>
             </li>
-            <li className="nav-item mb-3">
+            <li className="nav-item mb-3 pb-3 border-bottom border-light">
               <Link
                 onClick={() => {
                   props.setCurrentLink("/Support");
                 }}
                 to="/Support"
-                className="btn text-light w-100"
+                className="text-decoration-none text-light w-100"
               >
-                Support
+                <span className="fa fa-map mx-3" />
+                Maps
               </Link>
             </li>
-            <li className="nav-item mb-3">
-              <Link
-                onClick={() => {
-                  props.setCurrentLink("/Someting");
-                }}
-                to="/Someting"
-                className="btn text-light w-100"
-              >
-                Documents
-              </Link>
-            </li>
-            <li className="nav-item mb-3">
+
+            <li className="nav-item mb-5 pb-3 border-bottom border-light">
               <Link
                 to="/Login"
-                className="btn text-light w-100"
+                className="text-decoration-none text-light w-100"
                 onClick={SignOut}
               >
                 Sign-Out
@@ -98,25 +91,45 @@ function LeftNavBar(props) {
             </li>
           </ul>
         </div>
-        <div className="footer text-center text-muted">
-          <ul className="justify-content-center list-unstyled d-flex pt-3">
-            <li className="ms-3">
-              <a href="https://www.facebook.com" target="_blank">
-                <i className="bi bi-facebook social-icons text-light"></i>
-              </a>
-            </li>
-            <li className="ms-3">
-              <a href="https://www.twitter.com" target="_blank">
-                <i className="bi bi-twitter social-icons text-light"></i>
-              </a>
-            </li>
-            <li className="ms-3">
-              <a href="https://www.instagram.com" target="_blank">
-                <i className="bi bi-instagram social-icons text-light"></i>
-              </a>
-            </li>
-          </ul>
-          <p className="">SPACE KITTIES &copy; 2023</p>
+
+        {/* News Letter */}
+        <div className="text-center text-light border-top px-1">
+          <div className="mb-5 mt-2">
+            <h3 className="h5 mb-3">Subscribe for newsletter</h3>
+            <form>
+              <div className="form-group justify-content-center d-flex">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  className="form-control w-75 opacity-75"
+                  placeholder="Email Address"
+                />
+              </div>
+              <button
+                id="newsletterBtn"
+                className="btn w-75 border mt-2"
+                disabled={
+                  !email || email.indexOf("@") === -1 || !email.endsWith(".com")
+                }
+                onClick={() => {
+                  alert("Subscribed!");
+                }}
+              >
+                <span className="fa fa-paper-plane text-light" />
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="text-center text-light">
+          <p>
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> All
+            rights reserved
+          </p>
+          <button className="mb-4">Privacy Policy</button>
         </div>
       </nav>
     </>

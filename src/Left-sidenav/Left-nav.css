@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.sidenav {
+  background-color: #2e3047;
+  background: linear-gradient(to bottom, #3bba9c8a, #7077935e),
+    url("/public/images/sidenav-bg.jpg") no-repeat center center/cover;
+}
+
+.sidenav-logo {
+  margin-bottom: 1.5em;
+  padding: 1.5em;
+}
+
+.sidenav-logo-text {
+  color: #3bba9c;
+  font-size: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
