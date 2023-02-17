@@ -93,7 +93,7 @@ function LeftNavBar(props) {
         </div>
 
         {/* News Letter */}
-        <div className="text-center text-light">
+        <div className="text-center text-light d-none d-lg-block">
           <div className="mb-5 mt-2">
             <h3 className="h5 mb-3">Subscribe for newsletter</h3>
             <form>
@@ -123,7 +123,7 @@ function LeftNavBar(props) {
         </div>
 
         {/* Footer */}
-        <div className="text-center text-light">
+        <div className="text-center text-light d-none d-lg-block">
           <p>
             Copyright &copy;
             <script>document.write(new Date().getFullYear());</script> All
