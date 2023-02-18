@@ -31,9 +31,10 @@
 
 @media only screen and (max-width: 768px) {
   .sidenav-li-logout {
-    margin-top: 30em;
+    position: absolute;
+    bottom: 0;
+    margin-left: 1em;
     padding-top: 2em;
-    border-top: 1px solid whitesmoke;
     border-bottom: 0px solid whitesmoke;
   }
 }

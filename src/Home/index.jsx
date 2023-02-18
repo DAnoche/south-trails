@@ -56,7 +56,7 @@ function Home() {
         <div className="row">
           <LeftNavBar setCurrentLink={setCurrentLink} />
           <main className="col-10 col-md-10 col-lg-9 col-xl-10">
-            <div className="d-flex align-items-center pt-3 pb-2 mb-3 border-bottom sticky-top">
+            <div className="d-flex align-items-center pt-3 pb-2 mb-3 border-bottom sticky-top bg-light">
               <h1 className="display-5 fw-bold">Dashboard</h1>
             </div>
             {renderOutlet()}
