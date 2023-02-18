@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import "./map.css";
 
 function Maps() {
-  const showHideMap = ["batulao", "maculot", "talamitam"];
   const [showMap, setShowMap] = useState("");
   const [showImage, setShowImage] = useState(true);
 
   const handleSelect = (event) => {
     const selectedMap = event.target.value;
-    setShowMap(selectedMap.toLowerCase());
-    setShowImage(false);
+    if (selectedMap === "Choose Map") {
+      setShowMap("");
+      setShowImage(true);
+    } else {
+      setShowMap(selectedMap.toLowerCase());
+      setShowImage(false);
+    }
   };
 
   return (
@@ -38,7 +42,9 @@ function Maps() {
       )}
 
       {/* BATULAO */}
-      <div className={`${showMap === "mt. batulao" ? "" : "d-none"}`}>
+      <div
+        className={`${showMap === "mt. batulao" && !showImage ? "" : "d-none"}`}
+      >
         <div className="map-frame container-fluid">
           <div className="lead">
             <p>Address: Nasugbu, Batangas</p>
@@ -51,7 +57,9 @@ function Maps() {
         </div>
       </div>
       {/* MACULOT */}
-      <div className={` ${showMap === "mt. maculot" ? "" : "d-none"}`}>
+      <div
+        className={`${showMap === "mt. maculot" && !showImage ? "" : "d-none"}`}
+      >
         <div className="map-frame container-fluid">
           <div className="lead">
             <p>Address: Cuenca, Batangas</p>
@@ -64,7 +72,11 @@ function Maps() {
         </div>
       </div>
       {/* TALAMITAM */}
-      <div className={`${showMap === "mt. talamitam" ? "" : "d-none"}`}>
+      <div
+        className={`${
+          showMap === "mt. talamitam" && !showImage ? "" : "d-none"
+        }`}
+      >
         <div className="map-frame container-fluid">
           <div className="lead">
             <p>Address: Nasugbu, Batangas</p>
