@@ -2,21 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./gallery.css";
 
-import Lightbox from "bs5-lightbox";
-
-const options = {
-  keyboard: true,
-  size: "fullscreen",
-};
-
-document.querySelectorAll(".my-lightbox-toggle").forEach((el) =>
-  el.addEventListener("click", (e) => {
-    e.preventDefault();
-    const lightbox = new Lightbox(el, options);
-    lightbox.show();
-  })
-);
-
 function Gallery() {
   const [img, setImg] = useState("");
   const [res, setRes] = useState([]);
@@ -44,7 +29,41 @@ function Gallery() {
 
   return (
     <>
-      <h1>Hi im Gallery</h1>
+      <div className="container-fluid mb-3">
+        <div className="row">
+          <div className="col-12 d-flex justify-content-center align-items-center input">
+            <input
+              className="col-10 form-control-sm"
+              type="text"
+              placeholder="Search"
+              value={img}
+              onChange={(e) => setImg(e.target.value)}
+            />
+            <button
+              type="submit"
+              onClick={Submit}
+              className="btn bg-success text-white ms-2"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+      {/* Display image */}
+      <div className="col-lg-12 d-flex justify-content-evenly flex-wrap">
+        {res.map((val) => {
+          return (
+            <div key={val.id} className="col-lg-4 col-md-6 col-sm-12 mb-3">
+              <img
+                className="w-100 h-100 img-fluid img-thumbnail"
+                src={val.urls.small}
+                alt={val.alt_description}
+              />
+            </div>
+          );
+        })}
+      </div>
+      ;
     </>
   );
 }
