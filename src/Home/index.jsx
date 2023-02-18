@@ -106,6 +106,84 @@ function Home() {
               </div>
             </div>
           </div>
+          {/* Video 2 */}
+          <div className="row row-cols-1 mb-3">
+            <div className="col">
+              <div className="card shadow-sm">
+                <iframe
+                  width="100%"
+                  height="500px"
+                  src="https://www.youtube.com/embed/MviwwvE5Vvw"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+
+                <div className="card-body">
+                  <div className="card-text">
+                    <strong>Hiking Mt. Maculot | Hiking Series Vlog</strong>
+                    <br />
+                    Posted by: Bianca Mikaehla
+                    <br />
+                    <p>Uploaded: 2 years ago</p>
+                  </div>
+                  <div className="card-footer bg-light">
+                    <button className={likeButtonClasses} onClick={handleLike}>
+                      <span className="fa fa-thumbs-o-up" />
+                      &nbsp;{likes}&nbsp;Likes
+                    </button>
+                    <button
+                      className={dislikeButtonClasses}
+                      onClick={handleDislike}
+                    >
+                      <span className="fa fa-thumbs-down" />
+                      &nbsp;{dislikes}&nbsp;Dislikes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Video 3 */}
+          <div className="row row-cols-1 mb-3">
+            <div className="col">
+              <div className="card shadow-sm">
+                <iframe
+                  width="100%"
+                  height="500px"
+                  src="https://www.youtube.com/embed/5xkGflH-UiQ"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+
+                <div className="card-body">
+                  <div className="card-text">
+                    <strong>
+                      A beginners hike in Nasugbu, Batangas | Mt.Talamitam
+                    </strong>
+                    <br />
+                    Posted by: Coby Sarreal
+                    <br />
+                    <p>Uploaded: 1 year ago</p>
+                  </div>
+                  <div className="card-footer bg-light">
+                    <button className={likeButtonClasses} onClick={handleLike}>
+                      <span className="fa fa-thumbs-o-up" />
+                      &nbsp;{likes}&nbsp;Likes
+                    </button>
+                    <button
+                      className={dislikeButtonClasses}
+                      onClick={handleDislike}
+                    >
+                      <span className="fa fa-thumbs-down" />
+                      &nbsp;{dislikes}&nbsp;Dislikes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </>
       );
     } else {
