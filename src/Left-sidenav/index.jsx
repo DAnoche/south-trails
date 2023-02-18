@@ -12,7 +12,7 @@ function LeftNavBar(props) {
 
   return (
     <>
-      <nav className="sidenav col-2 col-lg-3 col-xl-2 sticky-top vh-100">
+      <nav className="sidenav col-2 col-lg-3 col-xl-2 sticky-top overflow-hidden vh-100">
         {/* Logo */}
         <Link
           onClick={() => {
