@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.error-page {
+  background: linear-gradient(to bottom, #3bba9c8a, #7077935e),
+    url("/public/images/mountain-login-bg.jpg") no-repeat center center/cover;
+  filter: sepia(20%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-code {
+  font-size: 10em;
+  font-weight: bolder;
+  opacity: 80%;
+  color: whitesmoke;
+}
+
+.error-text {
+  font-size: 1.5em;
+  opacity: 90%;
+  color: whitesmoke;
+}
+
+.btn-home {
+  text-decoration: none;
+  display: inline-block;
+  color: whitesmoke;
+  font-size: 24px;
+  border: 2px solid whitesmoke;
+  padding: 14px 70px;
+  border-radius: 50px;
+  margin-top: 20px;
+  transition: 0.5s;
+}
+
+.btn-home:hover {
+  background-color: #2e3047;
+  color: rgb(255, 255, 255);
+}
