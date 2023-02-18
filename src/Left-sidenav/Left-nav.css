@@ -25,9 +25,23 @@
   border-bottom: 1px solid whitesmoke;
 }
 
+.sidenav-li-logout {
+  margin-top: 10em;
+}
+
+@media only screen and (max-width: 768px) {
+  .sidenav-li-logout {
+    margin-top: 30em;
+    padding-top: 2em;
+    border-top: 1px solid whitesmoke;
+    border-bottom: 0px solid whitesmoke;
+  }
+}
+
 @media only screen and (max-width: 425px) {
   .sidenav-li {
     border-bottom: 0px solid;
+    margin-left: -0.5em;
   }
 }
 

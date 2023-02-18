@@ -12,7 +12,7 @@ function LeftNavBar(props) {
 
   return (
     <>
-      <nav className="sidenav col-12 col-md-2 col-lg-3 col-xl-2 sticky-top vh-100">
+      <nav className="sidenav col-2 col-lg-3 col-xl-2 sticky-top vh-100">
         {/* Logo */}
         <Link
           onClick={() => {
@@ -29,68 +29,68 @@ function LeftNavBar(props) {
         </Link>
 
         {/* Menu */}
-        <div className="container">
-          <ul className="navbar-nav decoration-none">
-            <li className="sidenav-li nav-item mb-3 pb-3 mt-5 mt-lg-0 text-center text-lg-start ">
-              <Link
-                onClick={() => {
-                  props.setCurrentLink("/");
-                }}
-                to="/"
-                className="text-decoration-none text-light w-100"
-              >
-                <span className="fa fa-home mx-3 sidenav-icon" />
-                <span className="d-none d-lg-inline">Home</span>
-              </Link>
-            </li>
-            <li className="sidenav-li nav-item mb-3 pb-3 text-center text-lg-start">
-              <Link
-                onClick={() => {
-                  props.setCurrentLink("/Gallert");
-                }}
-                to="/Gallery"
-                className="text-decoration-none text-light w-100"
-              >
-                <span className="fa fa-photo mx-3 sidenav-icon" />
-                <span className="d-none d-lg-inline">Gallery</span>
-              </Link>
-            </li>
-            <li className="sidenav-li nav-item mb-3 pb-3 text-center text-lg-start">
-              <Link
-                onClick={() => {
-                  props.setCurrentLink("/Trails");
-                }}
-                to="/Trails"
-                className="text-decoration-none text-light w-100"
-              >
-                <span className="fa fa-bolt mx-3 sidenav-icon" />
-                <span className="d-none d-lg-inline">Trails</span>
-              </Link>
-            </li>
-            <li className="sidenav-li nav-item mb-3 pb-3 text-center text-lg-start">
-              <Link
-                onClick={() => {
-                  props.setCurrentLink("/Maps");
-                }}
-                to="/Maps"
-                className="text-decoration-none text-light w-100"
-              >
-                <span className="fa fa-map mx-3 sidenav-icon" />
-                <span className="d-none d-lg-inline">Maps</span>
-              </Link>
-            </li>
 
-            <li className="sidenav-li nav-item mb-5 pb-3 border-bottom border-light">
-              <Link
-                to="/Login"
-                className="text-decoration-none text-light w-100"
-                onClick={SignOut}
-              >
-                Sign-Out
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <ul className="navbar-nav decoration-none">
+          <li className="sidenav-li nav-item mb-3 pb-3 mt-5 mt-lg-0 text-center text-lg-start">
+            <Link
+              onClick={() => {
+                props.setCurrentLink("/");
+              }}
+              to="/"
+              className="text-decoration-none text-light w-100"
+            >
+              <span className="fa fa-home mx-3 sidenav-icon" />
+              <span className="d-none d-lg-inline">Home</span>
+            </Link>
+          </li>
+          <li className="sidenav-li nav-item mb-3 pb-3 text-center text-lg-start">
+            <Link
+              onClick={() => {
+                props.setCurrentLink("/Gallert");
+              }}
+              to="/Gallery"
+              className="text-decoration-none text-light w-100"
+            >
+              <span className="fa fa-photo mx-3 sidenav-icon" />
+              <span className="d-none d-lg-inline">Gallery</span>
+            </Link>
+          </li>
+          <li className="sidenav-li nav-item mb-3 pb-3 text-center text-lg-start">
+            <Link
+              onClick={() => {
+                props.setCurrentLink("/Trails");
+              }}
+              to="/Trails"
+              className="text-decoration-none text-light w-100"
+            >
+              <span className="fa fa-bolt mx-3 sidenav-icon" />
+              <span className="d-none d-lg-inline">Trails</span>
+            </Link>
+          </li>
+          <li className="sidenav-li nav-item mb-3 pb-3 text-center text-lg-start">
+            <Link
+              onClick={() => {
+                props.setCurrentLink("/Maps");
+              }}
+              to="/Maps"
+              className="text-decoration-none text-light w-100"
+            >
+              <span className="fa fa-map mx-3 sidenav-icon" />
+              <span className="d-none d-lg-inline">Maps</span>
+            </Link>
+          </li>
+
+          <li className="sidenav-li sidenav-li-logout nav-item pb-3 text-center text-lg-start">
+            <Link
+              to="/Login"
+              className="text-decoration-none text-light w-100"
+              onClick={SignOut}
+            >
+              <span className="fa fa-sign-out mx-3 sidenav-icon" />
+              <span className="d-none d-lg-inline">Log out</span>
+            </Link>
+          </li>
+        </ul>
 
         {/* News Letter */}
         <div className="text-center text-light d-none d-lg-block">
