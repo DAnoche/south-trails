@@ -18,7 +18,7 @@
 
 .login-image {
   background: linear-gradient(to bottom, #3bba9c8a, #7077935e),
-    url("/public/images/mountain-login-bg.jpg") no-repeat center center/cover;
+    url("/public/images/home-bg.jpg") no-repeat center center/cover;
 }
 
 .login-logo {

@@ -57,7 +57,7 @@ function Home() {
         <div className="row">
           <LeftNavBar setCurrentLink={setCurrentLink} />
           <main className="home-section col-10 col-md-10 col-lg-9 col-xl-10">
-            <div className="home-dashboard d-flex justify-content-end align-items-center pt-3 pb-2 mb-3 sticky-top">
+            <div className="home-dashboard d-flex justify-content-end align-items-center pt-3 pb-2 pe-4 mb-3 sticky-top">
               <h1 className="display-5 fw-bold text-light">Weather API</h1>
             </div>
             {renderOutlet()}
