@@ -21,10 +21,10 @@ function Maps() {
       <div>
         <select
           className="form-select form-select-lg ms-2 mb-3 w-100"
-          ariaLabel="Default select example"
+          aria-label="Default select example"
           onChange={handleSelect}
         >
-          <option selected>Choose Map</option>
+          <option value="Choose Map">Choose Map</option>
           <option value="MT. BATULAO">MT. BATULAO</option>
           <option value="MT. MACULOT">MT. MACULOT</option>
           <option value="MT. TALAMITAM">MT. TALAMITAM</option>
@@ -46,7 +46,7 @@ function Maps() {
         className={`${showMap === "mt. batulao" && !showImage ? "" : "d-none"}`}
       >
         <div className="map-frame container-fluid">
-          <div className="lead">
+          <div className="lead text-light">
             <p>Address: Nasugbu, Batangas</p>
             <p>Latitude: 14.037639 | Longitude: 120.806007</p>
           </div>
@@ -61,7 +61,7 @@ function Maps() {
         className={`${showMap === "mt. maculot" && !showImage ? "" : "d-none"}`}
       >
         <div className="map-frame container-fluid">
-          <div className="lead">
+          <div className="lead text-light">
             <p>Address: Cuenca, Batangas</p>
             <p>Latitude: 13.917177 | Longitude: 121.047819</p>
           </div>
@@ -78,7 +78,7 @@ function Maps() {
         }`}
       >
         <div className="map-frame container-fluid">
-          <div className="lead">
+          <div className="lead text-light">
             <p>Address: Nasugbu, Batangas</p>
             <p>Latitude: 14.107750 | Longitude: 120.760019</p>
           </div>

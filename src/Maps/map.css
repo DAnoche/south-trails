@@ -16,7 +16,7 @@
 .map-image {
   margin-top: 10em;
   height: 20rem;
-  opacity: 70%;
+  opacity: 40%;
 }
 
 @media only screen and (max-width: 768px) {

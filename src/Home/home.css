@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.home-section {
+  background: linear-gradient(to bottom, #3bba9c8a, #7077935e),
+    url("/public/images/home-bg.jpg") no-repeat center center/cover;
+}
+
+.home-dashboard {
+  background: linear-gradient(to bottom, #3bba9c8a, #7077935e),
+    url("/public/images/dashboard-bg.jpg") no-repeat center center/cover;
+}

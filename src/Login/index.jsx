@@ -65,20 +65,9 @@ function Login() {
                 placeholder="Password"
               />
             </div>
-            <button className="btn btn-lg w-100 btn-color" onClick={login}>
+            <button className="btn btn-lg w-100 btn-color mb-4" onClick={login}>
               Login
             </button>
-
-            <div className="login-divider d-flex align-items-center my-4">
-              <p className="text-center fw-bold mx-3 mb-0">OR</p>
-            </div>
-
-            <div className="login-icon text-center d-none d-md-block">
-              <button className="btn btn-lg w-100 btn-color">
-                <i className="fab fa-facebook-f me-2" />
-                Continue with Facebook
-              </button>
-            </div>
 
             <div className="login-icon text-center d-block d-md-none">
               <button className="btn btn-lg w-100 btn-color">
