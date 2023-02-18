@@ -46,7 +46,7 @@ function Maps() {
         className={`${showMap === "mt. batulao" && !showImage ? "" : "d-none"}`}
       >
         <div className="map-frame container-fluid">
-          <div className="lead text-light">
+          <div className="lead text-light text-center text-lg-start">
             <p>Address: Nasugbu, Batangas</p>
             <p>Latitude: 14.037639 | Longitude: 120.806007</p>
           </div>
