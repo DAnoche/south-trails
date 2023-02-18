@@ -20,11 +20,92 @@ function Home() {
     window.location.href = "http://localhost:3000/login";
   }
 
+  const [likes, setLikes] = useState(77);
+  const [dislikes, setDislikes] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
+  const [isDisliked, setIsDisliked] = useState(false);
+
+  const handleLike = () => {
+    if (isLiked) {
+      setLikes(77);
+      setIsLiked(false);
+    } else {
+      setLikes(likes + 1);
+      setIsLiked(true);
+      if (isDisliked) {
+        setDislikes(dislikes - 1);
+        setIsDisliked(false);
+      }
+    }
+  };
+
+  const handleDislike = () => {
+    if (isDisliked) {
+      setDislikes(0);
+      setIsDisliked(false);
+    } else {
+      setDislikes(dislikes + 1);
+      setIsDisliked(true);
+      if (isLiked) {
+        setLikes(likes - 1);
+        setIsLiked(false);
+      }
+    }
+  };
+
+  const likeButtonClasses = `btn bg-light p-1 me-3 align-items-center ${
+    isLiked ? "text-primary" : ""
+  }`;
+
+  const dislikeButtonClasses = `btn bg-light p-1 align-items-center ${
+    isDisliked ? "text-danger" : ""
+  }`;
+
   const renderOutlet = () => {
     if (currentLink == "/") {
       return (
         <>
-          <h1>Im home content</h1>
+          {/* Video 1 */}
+          <div className="row row-cols-1 mb-3">
+            <div className="col">
+              <div className="card shadow-sm">
+                <iframe
+                  width="100%"
+                  height="500px"
+                  src="https://www.youtube.com/embed/XVIuoWBRV5c"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+
+                <div className="card-body">
+                  <div className="card-text">
+                    <strong>
+                      Mt. Batulao, Nasugbu, Batangas, Philippines | Trail
+                      Running
+                    </strong>
+                    <br />
+                    Posted by: Nomad Terra Crawlers TV
+                    <br />
+                    <p>Uploaded: 1 year ago</p>
+                  </div>
+                  <div className="card-footer bg-light">
+                    <button className={likeButtonClasses} onClick={handleLike}>
+                      <span className="fa fa-thumbs-o-up" />
+                      &nbsp;{likes}&nbsp;Likes
+                    </button>
+                    <button
+                      className={dislikeButtonClasses}
+                      onClick={handleDislike}
+                    >
+                      <span className="fa fa-thumbs-down" />
+                      &nbsp;{dislikes}&nbsp;Dislikes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </>
       );
     } else {
