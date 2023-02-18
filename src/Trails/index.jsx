@@ -1,6 +1,3 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-
 function Trails() {
   const mtBatulaoLink =
     "https://www.google.com/maps/place/Mount+Batulao+Peak,+Batangas/@14.0378667,120.806075,15z/data=!4m6!3m5!1s0x33bd9eb53e3c3949:0x45eae461bc85fab6!8m2!3d14.0378669!4d120.806075!16s%2Fg%2F11fmzcccl2";
@@ -16,6 +13,7 @@ function Trails() {
   return (
     <>
       <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3">
+        {/* Mt. Batulao */}
         <div className="col">
           <div className="card shadow-sm">
             <img
@@ -25,7 +23,7 @@ function Trails() {
             />
 
             <div className="card-body">
-              <p className="card-text">
+              <div className="card-text">
                 <strong>Batulao Trail</strong>
                 <br />
                 Nasugbu, Batangas
@@ -39,7 +37,7 @@ function Trails() {
                   <span className="text-warning fa fa-star-o" />
                 </div>
                 <p>
-                  Verdant, rugged mountain with a day hike to the top, offering
+                  A rugged mountain with a day hike to the top, offering
                   dramatic panoramas of the region.
                 </p>
                 <p className="h6">
@@ -47,13 +45,107 @@ function Trails() {
                   <br />
                   Longitude: 120.806007
                 </p>
-              </p>
+              </div>
               <div className="d-flex justify-content-end align-items-center">
                 <div className="btn-group">
                   <button
                     type="button"
                     className="btn btn-sm btn-outline-success"
                     onClick={() => openInNewTab(mtBatulaoLink)}
+                  >
+                    Visit Map <span className="fa fa-external-link" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Mt. Maculot */}
+        <div className="col">
+          <div className="card shadow-sm">
+            <img
+              className="thumbnail"
+              src={"/images/maculot.jpg"}
+              alt="Maculot"
+            />
+
+            <div className="card-body">
+              <div className="card-text">
+                <strong>Maculot Trail</strong>
+                <br />
+                Cuenca, Batangas
+                <br />
+                <div className="my-2">
+                  Difficulty:&nbsp;
+                  <span className="text-warning fa fa-star" />
+                  <span className="text-warning fa fa-star" />
+                  <span className="text-warning fa fa-star" />
+                  <span className="text-warning fa fa-star" />
+                  <span className="text-warning fa fa-star-o" />
+                </div>
+                <p>
+                  Popular trail for camping and hiking, enjoy some solitude
+                  during quieter times of day.
+                </p>
+                <p className="h6">
+                  Latitude: 13.917177
+                  <br />
+                  Longitude: 121.047819
+                </p>
+              </div>
+              <div className="d-flex justify-content-end align-items-center">
+                <div className="btn-group">
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-outline-success"
+                    onClick={() => openInNewTab(mtMaculotLink)}
+                  >
+                    Visit Map <span className="fa fa-external-link" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Mt. Talamitam */}
+        <div className="col">
+          <div className="card shadow-sm">
+            <img
+              className="thumbnail"
+              src={"/images/talamitam.jpg"}
+              alt="Talamitam"
+            />
+
+            <div className="card-body">
+              <div className="card-text">
+                <strong>Talamitam Trail</strong>
+                <br />
+                Nasugbu, Batangas
+                <br />
+                <div className="my-2">
+                  Difficulty:&nbsp;
+                  <span className="text-warning fa fa-star" />
+                  <span className="text-warning fa fa-star" />
+                  <span className="text-warning fa fa-star" />
+                  <span className="text-warning fa fa-star-o" />
+                  <span className="text-warning fa fa-star-o" />
+                </div>
+                <p>
+                  Offers a river cross, cogon trails and passing through upland
+                  farms. Beginner friendly trail.
+                </p>
+                <p className="h6">
+                  Latitude: 14.107750
+                  <br />
+                  Longitude: 120.760019
+                </p>
+              </div>
+              <div className="d-flex justify-content-end align-items-center">
+                <div className="btn-group">
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-outline-success"
+                    onClick={() => openInNewTab(mtTalamitamLink)}
                   >
                     Visit Map <span className="fa fa-external-link" />
                   </button>
