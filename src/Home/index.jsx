@@ -19,54 +19,71 @@ function Home() {
     localStorage.clear();
     window.location.href = "http://localhost:3000/login";
   }
+  // Video likes/dislikes
+  const videoUrls = [
+    "https://www.youtube.com/embed/XVIuoWBRV5c",
+    "https://www.youtube.com/embed/MviwwvE5Vvw",
+    "https://www.youtube.com/embed/5xkGflH-UiQ",
+  ];
 
-  const [likes, setLikes] = useState(77);
-  const [dislikes, setDislikes] = useState(0);
-  const [isLiked, setIsLiked] = useState(false);
-  const [isDisliked, setIsDisliked] = useState(false);
+  const Video = ({ src, initialLikes, initialDislikes }) => {
+    const [likes, setLikes] = useState(initialLikes);
+    const [dislikes, setDislikes] = useState(initialDislikes);
 
-  const handleLike = () => {
-    if (isLiked) {
-      setLikes(77);
-      setIsLiked(false);
-    } else {
-      setLikes(likes + 1);
-      setIsLiked(true);
-      if (isDisliked) {
-        setDislikes(dislikes - 1);
-        setIsDisliked(false);
-      }
-    }
+    const handleLike = () => {
+      setLikes((prevLikes) => prevLikes + 1);
+    };
+
+    const handleDislike = () => {
+      setDislikes((prevDislikes) => prevDislikes + 1);
+    };
+
+    return (
+      <div>
+        <iframe src={src} width="560" height="315" title="video" />
+        <div>
+          <button onClick={handleLike}>Like {likes}</button>
+          <button onClick={handleDislike}>Dislike {dislikes}</button>
+        </div>
+      </div>
+    );
   };
 
-  const handleDislike = () => {
-    if (isDisliked) {
-      setDislikes(0);
-      setIsDisliked(false);
-    } else {
-      setDislikes(dislikes + 1);
-      setIsDisliked(true);
-      if (isLiked) {
-        setLikes(likes - 1);
-        setIsLiked(false);
-      }
-    }
-  };
-
-  const likeButtonClasses = `btn bg-light p-1 me-3 align-items-center ${
-    isLiked ? "text-primary" : ""
-  }`;
-
-  const dislikeButtonClasses = `btn bg-light p-1 align-items-center ${
-    isDisliked ? "text-danger" : ""
-  }`;
+  const videos = [
+    {
+      src: "https://www.youtube.com/embed/XVIuoWBRV5c",
+      initialLikes: 10,
+      initialDislikes: 2,
+    },
+    {
+      src: "https://www.youtube.com/embed/MviwwvE5Vvw",
+      initialLikes: 5,
+      initialDislikes: 1,
+    },
+    {
+      src: "https://www.youtube.com/embed/5xkGflH-UiQ",
+      initialLikes: 7,
+      initialDislikes: 3,
+    },
+  ];
 
   const renderOutlet = () => {
     if (currentLink == "/") {
       return (
         <>
+          <div>
+            {videos.map((video, index) => (
+              <Video
+                key={index}
+                src={video.src}
+                initialLikes={video.initialLikes}
+                initialDislikes={video.initialDislikes}
+              />
+            ))}
+          </div>
+          {/* First try */}
           {/* Video 1 */}
-          <div className="row row-cols-1 mb-3">
+          {/* <div className="row row-cols-1 mb-3">
             <div className="col">
               <div className="card shadow-sm">
                 <iframe
@@ -105,9 +122,9 @@ function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* Video 2 */}
-          <div className="row row-cols-1 mb-3">
+          {/* <div className="row row-cols-1 mb-3">
             <div className="col">
               <div className="card shadow-sm">
                 <iframe
@@ -143,9 +160,9 @@ function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* Video 3 */}
-          <div className="row row-cols-1 mb-3">
+          {/* <div className="row row-cols-1 mb-3">
             <div className="col">
               <div className="card shadow-sm">
                 <iframe
@@ -183,7 +200,7 @@ function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </>
       );
     } else {
