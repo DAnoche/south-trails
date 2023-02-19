@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "./home.css";
 
 function Home() {
-  const [currentLink, setCurrentLink] = useState("");
+  const [currentLink, setCurrentLink] = useState("/");
   let isUserLoggedIn = false;
 
   try {

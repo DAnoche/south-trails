@@ -46,7 +46,7 @@ function LeftNavBar(props) {
           <li className="sidenav-li nav-item mb-3 pb-3 text-center text-lg-start">
             <Link
               onClick={() => {
-                props.setCurrentLink("/Gallert");
+                props.setCurrentLink("/Gallery");
               }}
               to="/Gallery"
               className="text-decoration-none text-light w-100"
