@@ -42,7 +42,7 @@ function Gallery() {
             <button
               type="submit"
               onClick={Submit}
-              className="btn bg-success text-white ms-2"
+              className="btn btn-outline-light ms-2"
             >
               Search
             </button>

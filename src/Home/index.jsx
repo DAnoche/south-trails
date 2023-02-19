@@ -145,23 +145,39 @@ function Home() {
   };
 
   // Weather API
-  // const [lat, setLat] = useState([]);
-  // const [long, setLong] = useState([]);
-  // useEffect(() => {
-  //   navigator.geolocation.getCurrentPosition(function (position) {
-  //     setLat(position.coords.latitude);
-  //     setLong(position.coords.longitude);
-  //   });
-  // }, [lat, long]);
+  const [weather, setWeather] = useState({
+    long: "",
+    lat: "",
+    temp: "",
+    condition: "",
+    icon: "",
+  });
 
-  // let params = new URLSearchParams({
-  //   access_key: "cd51865404614b1ba4755834231802",
-  //   q: [lat, long],
-  // });
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      setWeather({
+        ...weather,
+        long: position.coords.longitude,
+        lat: position.coords.latitude,
+      });
+    });
+  }, []);
 
-  // fetch(`http://api.weatherapi.com/v1/forecast.json?key=${params}`)
-  //   .then((res) => res.json())
-  //   .then(console.log);
+  useEffect(() => {
+    fetch(
+      `http://api.weatherapi.com/v1/forecast.json?key=c5f9b56eef2b40a180b55248231902&q=${weather.lat},${weather.long}`
+    )
+      .then((res) => res.json())
+      .then((res) =>
+        setWeather({
+          ...weather,
+          temp: res.current.temp_c,
+          icon: res.current.condition.icon,
+          condition: res.current.condition.text,
+        })
+      );
+  }, [weather.lat, weather.long]);
+  console.log(weather);
 
   return !!isUserLoggedIn ? (
     <>
@@ -170,7 +186,10 @@ function Home() {
           <LeftNavBar setCurrentLink={setCurrentLink} />
           <main className="home-section col-10 col-md-10 col-lg-9 col-xl-10">
             <div className="home-dashboard d-flex justify-content-end align-items-center pt-3 pb-2 pe-4 mb-3 sticky-top">
-              <h1 className="display-5 fw-bold text-light">Weather API</h1>
+              <h1 className="display-5 fw-bold text-light">
+                {weather.temp} &#176;c&nbsp;{weather.condition}&nbsp;
+                <img src={`https:${weather.icon}`} />
+              </h1>
             </div>
             {renderOutlet()}
           </main>
