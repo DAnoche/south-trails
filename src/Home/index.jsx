@@ -20,33 +20,33 @@ function Home() {
     window.location.href = "http://localhost:3000/login";
   }
   // Video likes/dislikes
-  const videoUrls = [
-    "https://www.youtube.com/embed/XVIuoWBRV5c",
-    "https://www.youtube.com/embed/MviwwvE5Vvw",
-    "https://www.youtube.com/embed/5xkGflH-UiQ",
-  ];
-
   const videos = [
     {
       id: 1,
       src: "https://www.youtube.com/embed/XVIuoWBRV5c",
-      title: "Video 1",
-      initialLikes: 10,
-      initialDislikes: 3,
+      title: "Mt. Batulao, Nasugbu, Batangas, Philippines | Trail Running",
+      uploader: "Posted by: Nomad Terra Crawlers TV",
+      uploadDate: "Uploaded: 1 year ago",
+      initialLikes: 77,
+      initialDislikes: 0,
     },
     {
       id: 2,
       src: "https://www.youtube.com/embed/MviwwvE5Vvw",
-      title: "Video 2",
-      initialLikes: 15,
-      initialDislikes: 2,
+      title: "Hiking Mt. Maculot | Hiking Series Vlog",
+      uploader: "Posted by: Bianca Mikaehla",
+      uploadDate: "Uploaded: 2 years ago",
+      initialLikes: 69,
+      initialDislikes: 0,
     },
     {
       id: 3,
       src: "https://www.youtube.com/embed/5xkGflH-UiQ",
-      title: "Video 3",
-      initialLikes: 7,
-      initialDislikes: 1,
+      title: "A beginners hike in Nasugbu, Batangas | Mt.Talamitam",
+      uploader: "Posted by: Coby Sarreal",
+      uploadDate: "Uploaded: 1 year ago",
+      initialLikes: 197,
+      initialDislikes: 0,
     },
   ];
 
@@ -85,32 +85,36 @@ function Home() {
     };
 
     return (
-      <div className="card">
+      <div className="card shadow-sm mb-3">
+        <iframe
+          className="embed-responsive-item"
+          width="100%"
+          height="500px"
+          title={video.title}
+          src={video.src}
+          allowFullScreen
+        ></iframe>
         <div className="card-body">
           <h5 className="card-title">{video.title}</h5>
-          <div className="embed-responsive embed-responsive-16by9 mb-3">
-            <iframe
-              className="embed-responsive-item"
-              title={video.title}
-              src={video.src}
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div className="d-flex justify-content-between">
+          <p className="mb-4">
+            {video.uploader} <br /> {video.uploadDate}
+          </p>
+          <div className="embed-responsive embed-responsive-16by9 mb-3"></div>
+          <div className="d-flex justify-content-start">
             <button
               className={`btn btn-outline-primary me-2 ${
                 liked ? "active" : ""
               }`}
               onClick={handleLike}
             >
-              <i className="bi bi-hand-thumbs-up me-1"></i>
+              <span className="fa fa-thumbs-up me-1" />
               {likes} Likes
             </button>
             <button
               className={`btn btn-outline-danger ${disliked ? "active" : ""}`}
               onClick={handleDislike}
             >
-              <i className="bi bi-hand-thumbs-down me-1"></i>
+              <span className="fa fa-thumbs-down me-1" />
               {dislikes} Dislikes
             </button>
           </div>
@@ -123,135 +127,16 @@ function Home() {
     if (currentLink == "/") {
       return (
         <>
-          <div className="container my-5">
-            <div className="row">
+          <div className="container">
+            <div className="row row-cols-1 mb-3"></div>
+            <div className="col">
               {videos.map((video) => (
-                <div className="col-md-4 my-3" key={video.id}>
+                <div key={video.id}>
                   <VideoCard video={video} />
                 </div>
               ))}
             </div>
           </div>
-          {/* First try */}
-          {/* Video 1 */}
-          {/* <div className="row row-cols-1 mb-3">
-            <div className="col">
-              <div className="card shadow-sm">
-                <iframe
-                  width="100%"
-                  height="500px"
-                  src="https://www.youtube.com/embed/XVIuoWBRV5c"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-
-                <div className="card-body">
-                  <div className="card-text">
-                    <strong>
-                      Mt. Batulao, Nasugbu, Batangas, Philippines | Trail
-                      Running
-                    </strong>
-                    <br />
-                    Posted by: Nomad Terra Crawlers TV
-                    <br />
-                    <p>Uploaded: 1 year ago</p>
-                  </div>
-                  <div className="card-footer bg-light">
-                    <button className={likeButtonClasses} onClick={handleLike}>
-                      <span className="fa fa-thumbs-o-up" />
-                      &nbsp;{likes}&nbsp;Likes
-                    </button>
-                    <button
-                      className={dislikeButtonClasses}
-                      onClick={handleDislike}
-                    >
-                      <span className="fa fa-thumbs-down" />
-                      &nbsp;{dislikes}&nbsp;Dislikes
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
-          {/* Video 2 */}
-          {/* <div className="row row-cols-1 mb-3">
-            <div className="col">
-              <div className="card shadow-sm">
-                <iframe
-                  width="100%"
-                  height="500px"
-                  src="https://www.youtube.com/embed/MviwwvE5Vvw"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-
-                <div className="card-body">
-                  <div className="card-text">
-                    <strong>Hiking Mt. Maculot | Hiking Series Vlog</strong>
-                    <br />
-                    Posted by: Bianca Mikaehla
-                    <br />
-                    <p>Uploaded: 2 years ago</p>
-                  </div>
-                  <div className="card-footer bg-light">
-                    <button className={likeButtonClasses} onClick={handleLike}>
-                      <span className="fa fa-thumbs-o-up" />
-                      &nbsp;{likes}&nbsp;Likes
-                    </button>
-                    <button
-                      className={dislikeButtonClasses}
-                      onClick={handleDislike}
-                    >
-                      <span className="fa fa-thumbs-down" />
-                      &nbsp;{dislikes}&nbsp;Dislikes
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
-          {/* Video 3 */}
-          {/* <div className="row row-cols-1 mb-3">
-            <div className="col">
-              <div className="card shadow-sm">
-                <iframe
-                  width="100%"
-                  height="500px"
-                  src="https://www.youtube.com/embed/5xkGflH-UiQ"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-
-                <div className="card-body">
-                  <div className="card-text">
-                    <strong>
-                      A beginners hike in Nasugbu, Batangas | Mt.Talamitam
-                    </strong>
-                    <br />
-                    Posted by: Coby Sarreal
-                    <br />
-                    <p>Uploaded: 1 year ago</p>
-                  </div>
-                  <div className="card-footer bg-light">
-                    <button className={likeButtonClasses} onClick={handleLike}>
-                      <span className="fa fa-thumbs-o-up" />
-                      &nbsp;{likes}&nbsp;Likes
-                    </button>
-                    <button
-                      className={dislikeButtonClasses}
-                      onClick={handleDislike}
-                    >
-                      <span className="fa fa-thumbs-down" />
-                      &nbsp;{dislikes}&nbsp;Dislikes
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </>
       );
     } else {
