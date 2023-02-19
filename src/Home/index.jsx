@@ -26,60 +26,111 @@ function Home() {
     "https://www.youtube.com/embed/5xkGflH-UiQ",
   ];
 
-  const Video = ({ src, initialLikes, initialDislikes }) => {
-    const [likes, setLikes] = useState(initialLikes);
-    const [dislikes, setDislikes] = useState(initialDislikes);
+  const videos = [
+    {
+      id: 1,
+      src: "https://www.youtube.com/embed/XVIuoWBRV5c",
+      title: "Video 1",
+      initialLikes: 10,
+      initialDislikes: 3,
+    },
+    {
+      id: 2,
+      src: "https://www.youtube.com/embed/MviwwvE5Vvw",
+      title: "Video 2",
+      initialLikes: 15,
+      initialDislikes: 2,
+    },
+    {
+      id: 3,
+      src: "https://www.youtube.com/embed/5xkGflH-UiQ",
+      title: "Video 3",
+      initialLikes: 7,
+      initialDislikes: 1,
+    },
+  ];
+
+  const VideoCard = ({ video }) => {
+    const [likes, setLikes] = useState(video.initialLikes);
+    const [dislikes, setDislikes] = useState(video.initialDislikes);
+    const [liked, setLiked] = useState(false);
+    const [disliked, setDisliked] = useState(false);
 
     const handleLike = () => {
-      setLikes((prevLikes) => prevLikes + 1);
+      if (disliked) {
+        setDislikes(dislikes - 1);
+        setDisliked(false);
+      }
+      if (!liked) {
+        setLikes(likes + 1);
+        setLiked(true);
+      } else {
+        setLikes(likes - 1);
+        setLiked(false);
+      }
     };
 
     const handleDislike = () => {
-      setDislikes((prevDislikes) => prevDislikes + 1);
+      if (liked) {
+        setLikes(likes - 1);
+        setLiked(false);
+      }
+      if (!disliked) {
+        setDislikes(dislikes + 1);
+        setDisliked(true);
+      } else {
+        setDislikes(dislikes - 1);
+        setDisliked(false);
+      }
     };
 
     return (
-      <div>
-        <iframe src={src} width="560" height="315" title="video" />
-        <div>
-          <button onClick={handleLike}>Like {likes}</button>
-          <button onClick={handleDislike}>Dislike {dislikes}</button>
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">{video.title}</h5>
+          <div className="embed-responsive embed-responsive-16by9 mb-3">
+            <iframe
+              className="embed-responsive-item"
+              title={video.title}
+              src={video.src}
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className="d-flex justify-content-between">
+            <button
+              className={`btn btn-outline-primary me-2 ${
+                liked ? "active" : ""
+              }`}
+              onClick={handleLike}
+            >
+              <i className="bi bi-hand-thumbs-up me-1"></i>
+              {likes} Likes
+            </button>
+            <button
+              className={`btn btn-outline-danger ${disliked ? "active" : ""}`}
+              onClick={handleDislike}
+            >
+              <i className="bi bi-hand-thumbs-down me-1"></i>
+              {dislikes} Dislikes
+            </button>
+          </div>
         </div>
       </div>
     );
   };
 
-  const videos = [
-    {
-      src: "https://www.youtube.com/embed/XVIuoWBRV5c",
-      initialLikes: 10,
-      initialDislikes: 2,
-    },
-    {
-      src: "https://www.youtube.com/embed/MviwwvE5Vvw",
-      initialLikes: 5,
-      initialDislikes: 1,
-    },
-    {
-      src: "https://www.youtube.com/embed/5xkGflH-UiQ",
-      initialLikes: 7,
-      initialDislikes: 3,
-    },
-  ];
-
   const renderOutlet = () => {
     if (currentLink == "/") {
       return (
         <>
-          <div>
-            {videos.map((video, index) => (
-              <Video
-                key={index}
-                src={video.src}
-                initialLikes={video.initialLikes}
-                initialDislikes={video.initialDislikes}
-              />
-            ))}
+          <div className="container my-5">
+            <div className="row">
+              {videos.map((video) => (
+                <div className="col-md-4 my-3" key={video.id}>
+                  <VideoCard video={video} />
+                </div>
+              ))}
+            </div>
           </div>
           {/* First try */}
           {/* Video 1 */}
