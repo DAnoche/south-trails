@@ -1,4 +1,4 @@
-export const myExpressURL = "http://localhost:3005";
+export const myExpressURL = "https://good-erin-pike-suit.cyclic.app";
 
 export const serverRoutes = {
   Login: myExpressURL + "/api/v2/login",
