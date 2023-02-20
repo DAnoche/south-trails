@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/south-trails/static/css/main.2f251455.css",
-    "main.js": "/south-trails/static/js/main.810e4315.js",
+    "main.js": "/south-trails/static/js/main.c219c33f.js",
     "static/media/mountain-login-bg.jpg": "/south-trails/static/media/mountain-login-bg.e22a401aa5f8297f7a62.jpg",
     "static/media/dashboard-bg.jpg": "/south-trails/static/media/dashboard-bg.b80a1d2d737e2e32a76b.jpg",
     "static/media/home-bg.jpg": "/south-trails/static/media/home-bg.33a73aedac5ea8df2ce0.jpg",
     "static/media/sidenav-bg.jpg": "/south-trails/static/media/sidenav-bg.4614cd8184b611928e0e.jpg",
     "index.html": "/south-trails/index.html",
     "main.2f251455.css.map": "/south-trails/static/css/main.2f251455.css.map",
-    "main.810e4315.js.map": "/south-trails/static/js/main.810e4315.js.map"
+    "main.c219c33f.js.map": "/south-trails/static/js/main.c219c33f.js.map"
   },
   "entrypoints": [
     "static/css/main.2f251455.css",
-    "static/js/main.810e4315.js"
+    "static/js/main.c219c33f.js"
   ]
 }
