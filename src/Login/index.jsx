@@ -8,7 +8,7 @@ function Login() {
   try {
     isUserLoggedIn = JSON.parse(localStorage.getItem("user"));
     if (isUserLoggedIn && isUserLoggedIn.id) {
-      window.location.href = "http://localhost:3000/";
+      window.location.href = "https://DAnoche.github.io/south-trails/";
     }
   } catch (error) {}
 
@@ -26,7 +26,7 @@ function Login() {
         console.log("Result: ", result);
         if (result.success) {
           localStorage.setItem("user", JSON.stringify(result.userData));
-          window.location.href = "http://localhost:3000/";
+          window.location.href = "https://DAnoche.github.io/south-trails/";
         } else {
           alert("Invalid Username or Password");
         }
