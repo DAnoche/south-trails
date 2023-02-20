@@ -13,11 +13,11 @@ function Home() {
       // do nothing, continue lang
     } else {
       localStorage.clear();
-      window.location.href = "http://localhost:3000/login";
+      window.location.href = "https://DAnoche.github.io/south-trails/login";
     }
   } catch (error) {
     localStorage.clear();
-    window.location.href = "http://localhost:3000/login";
+    window.location.href = "https://DAnoche.github.io/south-trails/login";
   }
   // Video likes/dislikes
   const videos = [
